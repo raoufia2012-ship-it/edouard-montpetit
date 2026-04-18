@@ -1,0 +1,114 @@
+/* TOPBAR PROFILE BTN */
+#topbar-profile-btn {
+  background:none; border:none; cursor:pointer; color:var(--white);
+  display:flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%; transition:background .15s;
+}
+#topbar-profile-btn:hover { background:rgba(255,255,255,.1); }
+
+.avatar-circle {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--maroon2); border:2px solid var(--white);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Oswald',sans-serif; font-size:.78rem; font-weight:700; color:var(--white);
+}
+
+/* MODAL OVERLAY */
+.profile-modal {
+  position:fixed; inset:0; z-index:200;
+  display:flex; align-items:flex-end;
+  pointer-events:none; opacity:0; transition:opacity .25s;
+}
+.profile-modal.open { opacity:1; pointer-events:all; }
+
+.modal-backdrop {
+  position:absolute; inset:0; background:rgba(0,0,0,.6);
+}
+
+.modal-sheet {
+  position:relative; width:100%; background:var(--black);
+  border-top:3px solid var(--maroon);
+  border-radius:20px 20px 0 0;
+  padding:1.4rem 1.4rem 2rem;
+  transform:translateY(100%); transition:transform .3s cubic-bezier(.4,0,.2,1);
+  max-height:90vh; overflow-y:auto;
+}
+.profile-modal.open .modal-sheet { transform:translateY(0); }
+
+.modal-handle {
+  width:36px; height:4px; background:rgba(255,255,255,.2);
+  border-radius:2px; margin:0 auto 1.4rem;
+}
+
+/* LOGGED OUT — AUTH FORM */
+#auth-title {
+  font-family:'Oswald',sans-serif; font-size:1.4rem; font-weight:700;
+  letter-spacing:1px; margin-bottom:1.2rem; color:var(--white);
+}
+
+.auth-input {
+  width:100%; background:#181818; border:1px solid #2A2A2A;
+  border-radius:10px; padding:.85rem 1rem; color:var(--white);
+  font-family:'Inter',sans-serif; font-size:.9rem; outline:none;
+  transition:border-color .2s; margin-bottom:.75rem; display:block;
+  border-left:3px solid var(--maroon2);
+}
+.auth-input:focus { border-color:var(--maroon2); border-left-color:var(--white); }
+.auth-input::placeholder { color:rgba(255,255,255,.25); }
+
+#auth-name-row { display:none; }
+
+#auth-submit-btn {
+  width:100%; background:var(--maroon); color:var(--white); border:none;
+  border-radius:10px; padding:1rem; font-family:'Oswald',sans-serif;
+  font-size:1rem; letter-spacing:2px; text-transform:uppercase;
+  cursor:pointer; margin-top:.3rem; transition:background .15s;
+  border-bottom:3px solid var(--black);
+}
+#auth-submit-btn:hover { background:var(--maroon2); }
+#auth-submit-btn:disabled { opacity:.5; cursor:default; }
+
+#auth-error { font-size:.78rem; color:#E85A5A; margin-top:.6rem; min-height:18px; }
+
+#auth-toggle-text {
+  font-size:.8rem; color:rgba(255,255,255,.4); text-align:center; margin-top:1rem;
+}
+#auth-toggle-text span { color:var(--white); text-decoration:underline; cursor:pointer; font-weight:600; }
+
+/* LOGGED IN — PROFILE VIEW */
+.profile-header {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.4rem;
+  padding-bottom:1.2rem; border-bottom:1px solid #222;
+}
+.profile-avatar-big {
+  width:60px; height:60px; border-radius:50%;
+  background:var(--maroon); border:2px solid var(--white);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Oswald',sans-serif; font-size:1.3rem; font-weight:700; color:var(--white);
+  flex-shrink:0;
+}
+.profile-info-main strong { display:block; font-family:'Oswald',sans-serif; font-size:1.1rem; font-weight:700; color:var(--white); }
+.profile-info-main span { font-size:.78rem; color:rgba(255,255,255,.4); }
+
+.profile-row {
+  background:#181818; border-radius:10px; padding:.85rem 1rem;
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:.6rem; border-left:3px solid var(--maroon2);
+}
+.profile-row .pr-label { font-size:.75rem; color:rgba(255,255,255,.4); }
+.profile-row .pr-val { font-size:.85rem; font-weight:600; color:var(--white); }
+
+.lock-banner {
+  background:var(--maroon); border-radius:10px; padding:1rem 1.1rem;
+  margin:1rem 0; display:flex; align-items:center; gap:.8rem;
+}
+.lock-banner svg { width:18px; height:18px; stroke:var(--white); fill:none; stroke-width:2; flex-shrink:0; }
+.lock-banner p { font-size:.8rem; color:var(--white); line-height:1.5; }
+
+.logout-btn {
+  width:100%; background:#181818; color:rgba(255,255,255,.5);
+  border:1px solid #2A2A2A; border-radius:10px; padding:.85rem;
+  font-family:'Inter',sans-serif; font-size:.85rem; cursor:pointer;
+  margin-top:.4rem; transition:all .15s;
+}
+.logout-btn:hover { border-color:var(--maroon2); color:var(--white); }
